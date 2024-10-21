@@ -37,7 +37,7 @@ public class CoursController {
 //pour modifier un Cours donné d’un Module donné
     public void modifierCours(@RequestBody Course cours, @PathVariable Integer moduleId,
                               @PathVariable Integer id) {
-        cours.setModule(new Module(moduleId,"",""));
+        cours.setModule(new CourseModule(moduleId,"",""));
         coursService.modifierCours(cours);
     }
     @RequestMapping(method=RequestMethod.DELETE, value="/modules/{moduleId}/cours/{id}")
